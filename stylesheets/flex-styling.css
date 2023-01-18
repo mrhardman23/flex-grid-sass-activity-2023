@@ -1,0 +1,88 @@
+/*
+  This styles every element on the page to include padding and
+  border measurements when calculating the widths and heights of
+  elements.
+
+  Normally, the actual width of element is calculated like so:
+    actual width = width property + padding property + border property
+  
+  Now, because we set box-sizing to border box, the width of the whole element 
+  is going to be the width that we state as part of the width property for an
+  element.
+    actual width = width property = content width + padding + border
+*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* This styles the nav to have no padding inside the navigation bar. */
+nav {
+  padding: 0;
+}
+
+nav ul {
+  /*
+    This styles the navigation's unordereed list to be a flexbox container.
+    Flexbox containers typically help with designing responsive web pages.
+  */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  /* 
+    This allows our flex items to wrap to the next line when we run out of space 
+    to display them.
+  */
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  /* 
+    This allows the flex container to display items vertically (column) as opposed to
+    horizontally (row), which is the default.
+  */
+  /* -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; */
+
+  /*
+    The justify-content property allows us to align items in the same direction
+    that the flex container is displaying our items in.
+    
+    So, for a horizontal layout, it allows us to align items horizontally.
+    For a vertical layout, it allows us to align items vertically.
+
+    Values for justify-content include:
+      flex-start - align the items to the start of the container
+      flex-end - align the items to the end of the container
+      center - aligns the items to the center of the container
+      space-between - puts space between each item in the container, but does
+                      not add space to the left of the first item or the right
+                      of the last item.
+      space-around - put space around each item in the container
+  */
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -moz-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+/*
+  This styles the anchors inside the navigation bar to fill the width and
+  the height of the list items they are inside.
+*/
+nav ul li a {
+  width: 100%;
+  height: 100%;
+
+  padding: 1vw;
+}
