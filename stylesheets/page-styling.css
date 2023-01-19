@@ -23,6 +23,7 @@ body {
   navigation bar of the size of 1 M in the root font size.
 */
 nav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -68,6 +69,12 @@ nav ul li a {
   text-align: center;
   font-weight: bolder;
 
+  -webkit-transition: background-color ease-in-out 0.5s;
+
+  -o-transition: background-color ease-in-out 0.5s;
+
+  -moz-transition: background-color ease-in-out 0.5s;
+
   transition: background-color ease-in-out 0.5s;
 }
 
@@ -76,7 +83,8 @@ nav ul li a {
   navigation's unordered list will have their background colour change
   to black when the user hovers or focuses on the link.
 */
-nav ul li a:hover, nav ul li a:focus {
+nav ul li a:hover,
+nav ul li a:focus {
   background-color: black;
 }
 
@@ -96,7 +104,8 @@ nav ul li a:visited {
   width of the website on the left and right of the header and main
   sections.
 */
-header, main {
+header,
+main {
   margin: 1rem 2.5%;
 }
 

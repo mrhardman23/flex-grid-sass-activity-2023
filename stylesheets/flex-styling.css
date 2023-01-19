@@ -20,6 +20,8 @@
 /* This styles the nav to have no padding inside the navigation bar. */
 nav {
   padding: 0;
+
+  height: 10vh;
 }
 
 nav ul {
@@ -74,7 +76,105 @@ nav ul {
   -moz-box-pack: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+
+  /*
+    The align-items property aligns the flex items in the opposite direction
+    of how the flex container is laid out. So, if the flex container is set
+    as a row, align-items will align the flex items in the vertical direction.
+    If the flex container is set as a column, align-items will align the flex
+    items in the horizontal direction.
+
+    Values for align-items include:
+      stretch (default) - This stretches the flex item to fill the entire
+                          vertical space for the flex container.
+      center - Centers the flex items vertically in the flex container.
+      flex-start - Puts the flex items vertically at the start of the flex container.
+      flex-end - Puts the flex items vertically at the end of the flex container.
+      baseline - Aligns the flex items with the bottom of the text inside the flex
+                  items.
+  */
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+
+  /* 
+    The align-content property aligns the rows or columns inside the flex
+    container and affects how the flex items are wrapped inside the container.
+
+    Values for align-content are: 
+      stretch (default) - will make the rows or columns stretch to fill the
+                          entire container.
+      center - will make the rows or columns centered inside the flex container
+      space-between - will add space between the rows or columns to make the rows 
+                      fill the entire container.
+      space-around - will add space around each of the rows or columns to fill the 
+                      entire container.
+      flex-start - will make the rows or columns stay at the beginning of the flex
+                    container.
+      flex-end - will make the rows or columns stay at the end of the flex container.
+  */
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+
+  height: 100%;
 }
+
+nav ul li {
+  /*
+    The flex-grow property sets how much flex items grow as the
+    web page changes size.
+  */
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+
+  /*
+    The flex-basis property sets the initial width of flex items
+    inside the container. If the flex items are set to flex-grow: 1,
+    it will ensure that your flex items never shrink below 300px.
+  */
+  -webkit-flex-basis: 300px;
+  -ms-flex-preferred-size: 300px;
+  flex-basis: 300px;
+
+  /*
+    flex is the shorthand for all three flex properties: flex-grow, flex-shrink
+    and flex-basis.
+
+    The following line could replace the styling we have above this comment.
+  */
+  /* -webkit-flex: 1 0 300px;
+  -ms-flex: 1 0 300px;
+  flex: 1 0 300px; */
+}
+
+nav ul li:first-of-type {
+  /*
+    Since this flex-grow property is set to 3 instead of 1,
+    the first li in the nav's ul will grow 3 times as much
+    as the other lis.
+  */
+  -webkit-box-flex: 3;
+  -webkit-flex-grow: 3;
+  -moz-box-flex: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+}
+
+/* nav ul li:nth-of-type(4) { */
+/*
+    The flex-shrink property changes how much a flex item shrinks
+    compared to all the other flex items.
+  */
+/* -webkit-flex-shrink: 2;
+  -ms-flex-negative: 2;
+  flex-shrink: 2; */
+/* } */
 
 /*
   This styles the anchors inside the navigation bar to fill the width and
